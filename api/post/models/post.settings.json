@@ -8,16 +8,19 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "minLength": 3,
+      "maxLength": 150
     },
     "content": {
       "type": "richtext",
-      "required": true
+      "required": true,
+      "minLength": 3
     },
     "user": {
       "plugin": "users-permissions",
