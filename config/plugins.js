@@ -15,18 +15,18 @@ module.exports = ({ env }) => ({
   email: {
     provider: "smtp",
     providerOptions: {
-      host: "smtp.gmail.com", //SMTP Host
-      port: 465, //SMTP Port
+      host: env("SMTP_HOST"), //SMTP Host
+      port: env.int("SMTP_PORT"), //SMTP Port
       secure: true,
-      username: "__SEU_EMAIL@gmail.com",
-      password: "__SUA_SENHA_DE_APP__",
+      username: env("SMTP_USERNAME"),
+      password: env("SMTP_PASSWORD"),
       rejectUnauthorized: true,
       requireTLS: true,
       connectionTimeout: 1,
     },
     settings: {
-      from: "__SEU_EMAIL@gmail.com",
-      replyTo: "__SEU_EMAIL@gmail.com",
+      from: env("SMTP_FROM"),
+      replyTo: env("SMTP_REPLY_TO"),
     },
   },
 });
